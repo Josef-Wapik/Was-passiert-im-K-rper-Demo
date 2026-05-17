@@ -1,0 +1,64 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f7f8;
+  color: #222;
+}
+
+header {
+  background: #ffffff;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+#controls button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+#controls button.active {
+  background: #0077cc;
+  color: #fff;
+  border-color: #0077cc;
+}
+
+#lung-visual {
+  font-size: 4rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  padding: 1rem;
+}
