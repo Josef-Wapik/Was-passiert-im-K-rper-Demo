@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Was passiert im Körper?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Was passiert im Körper?</h1>
-  <p>Demonstrator zur Gesundheits- und Körperkompetenz (Sek I)</p>
+
+  <header>
+    <h1>Was passiert im Körper?</h1>
+    <p class="subtitle">
+      Didaktischer Demonstrator zur Gesundheits- und Körperkompetenz (Sekundarstufe I)
+    </p>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>
+        Dieser Demonstrator zeigt vereinfacht, wie der Körper auf unterschiedliche
+        Bedingungen reagiert – zum Beispiel beim Atmen sauberer Luft oder bei Rauch.
+      </p>
+      <p class="hint">
+        Hinweis: Dies ist ein didaktisches Modell, kein Medizinprodukt.
+      </p>
+    </section>
+
+    <section id="controls">
+      <button data-state="luft" class="active">Saubere Luft</button>
+      <button data-state="rauch">Zigarettenrauch</button>
+    </section>
+
+    <section id="simulation">
+      <div id="lung-visual">
+        🫁
+      </div>
+      <p id="explanation">
+        Bei sauberer Luft kann der Körper Sauerstoff gut aufnehmen.
+      </p>
+    </section>
+
+    <section id="didaktik">
+      <h2>Einsatz im Unterricht</h2>
+      <ul>
+        <li>Sekundarstufe I (Klassen 7–9)</li>
+        <li>Dauer: 45 Minuten</li>
+        <li>Keine Accounts, keine Datenerhebung</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Demonstrator – Stand Pilotphase</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
