@@ -13,11 +13,11 @@
       <div class="hero__badge">Demonstrator · Sekundarstufe I</div>
       <h1>Was passiert im Körper?</h1>
       <p class="hero__subtitle">
-        Ein didaktischer Demonstrator zur Gesundheits- und Körperkompetenz.
+        Atmung – saubere Luft vs. Zigarettenrauch
       </p>
       <p class="hero__text">
-        Diese vereinfachte Simulation zeigt, wie sich der Körper beim Atmen
-        unter unterschiedlichen Bedingungen verändert.
+        Diese vereinfachte Simulation zeigt, wie sich die Atmung verändert und
+        wie Sauerstoff sichtbar in den Körper transportiert wird.
       </p>
     </header>
 
@@ -26,9 +26,9 @@
       <section class="card intro-card">
         <h2>Worum geht es?</h2>
         <p>
-          Im Unterricht bleiben Körperprozesse oft abstrakt. Dieser Demonstrator
-          macht Ursache-Wirkungs-Zusammenhänge sichtbar – am Beispiel von
-          <strong>sauberer Luft</strong> im Vergleich zu <strong>Zigarettenrauch</strong>.
+          Das Modell zeigt vereinfacht, was beim Einatmen passiert. Die Lunge
+          bewegt sich sichtbar. Gleichzeitig wird dargestellt, wie viel
+          Sauerstoff in den Körper gelangt.
         </p>
         <p class="note">
           Hinweis: Dies ist ein didaktisches Modell, kein Medizinprodukt.
@@ -38,7 +38,7 @@
       <section class="card controls-card">
         <div class="section-header">
           <h2>Vergleich</h2>
-          <p>Wähle einen Zustand aus und beobachte die Veränderung.</p>
+          <p>Wähle einen Zustand aus und beobachte die Atmung.</p>
         </div>
 
         <div class="toggle-group" id="controls">
@@ -58,45 +58,42 @@
         </div>
 
         <div class="simulation-layout">
-          <div id="lungVisual" class="lung-visual lung-visual--luft">
-            <div class="lung-icon">🫁</div>
-            <div class="particles" id="particles" aria-hidden="true"></div>
+          <div class="visual-column">
+            <div id="lungVisual" class="lung-visual lung-visual--luft">
+              <div id="lungBody" class="lung-body breathing">
+                <div class="lung-shape">🫁</div>
+              </div>
+
+              <div id="airParticles" class="particles particles--air" aria-hidden="true"></div>
+              <div id="smokeParticles" class="particles particles--smoke" aria-hidden="true"></div>
+              <div id="oxygenTransport" class="transport transport--oxygen" aria-hidden="true"></div>
+            </div>
           </div>
 
           <div class="marker-panel">
             <div class="marker">
               <div class="marker__label">Atemwege</div>
-              <div id="markerAtemwege" class="marker__value marker__value--good">
-                weit
-              </div>
+              <div id="markerAtemwege" class="marker__value marker__value--good">weit</div>
             </div>
 
             <div class="marker">
               <div class="marker__label">Sauerstoff</div>
-              <div id="markerSauerstoff" class="marker__value marker__value--good">
-                hoch
-              </div>
+              <div id="markerSauerstoff" class="marker__value marker__value--good">hoch</div>
             </div>
 
             <div class="marker">
-              <div class="marker__label">Herz</div>
-              <div id="markerHerz" class="marker__value marker__value--good">
-                ruhig
-              </div>
+              <div class="marker__label">Transport</div>
+              <div id="markerTransport" class="marker__value marker__value--good">deutlich</div>
             </div>
 
             <div class="marker">
               <div class="marker__label">Belastung</div>
-              <div id="markerBelastung" class="marker__value marker__value--neutral">
-                gering
-              </div>
+              <div id="markerBelastung" class="marker__value marker__value--neutral">gering</div>
             </div>
 
             <div class="marker">
               <div class="marker__label">Leistungsfähigkeit</div>
-              <div id="markerLeistung" class="marker__value marker__value--good">
-                fit
-              </div>
+              <div id="markerLeistung" class="marker__value marker__value--good">fit</div>
             </div>
           </div>
         </div>
@@ -104,7 +101,7 @@
         <div class="explanation-box">
           <h3>Was passiert gerade?</h3>
           <p id="explanation">
-            Bei sauberer Luft kann der Körper Sauerstoff gut aufnehmen. Die Atmung funktioniert effizient.
+            Bei sauberer Luft nimmt die Lunge Sauerstoff gut auf. Viele Sauerstoff-Teilchen werden sichtbar in den Körper transportiert.
           </p>
         </div>
       </section>
@@ -115,7 +112,7 @@
           <li>Sekundarstufe I (Klassen 7–9)</li>
           <li>Dauer: 45 Minuten</li>
           <li>Keine Accounts, keine Datenerhebung</li>
-          <li>Einsatz im Browser oder auf Tablets</li>
+          <li>Im Browser oder auf Tablets nutzbar</li>
         </ul>
       </section>
 
