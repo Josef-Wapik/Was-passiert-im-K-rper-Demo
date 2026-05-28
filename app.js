@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll("#controls button");
 const explanation = document.getElementById("explanation");
 const stateTag = document.getElementById("stateTag");
 const lungVisual = document.getElementById("lungVisual");
+const particlesContainer = document.getElementById("particles");
 
 const markerAtemwege = document.getElementById("markerAtemwege");
 const markerSauerstoff = document.getElementById("markerSauerstoff");
@@ -24,6 +25,15 @@ const states = {
       herz: { text: "ruhig", className: "marker__value marker__value--good" },
       belastung: { text: "gering", className: "marker__value marker__value--neutral" },
       leistung: { text: "fit", className: "marker__value marker__value--good" }
+    },
+
+    particles: {
+      count: 16,
+      type: "air",
+      minSize: 8,
+      maxSize: 18,
+      minDuration: 4,
+      maxDuration: 7
     }
   },
 
@@ -40,9 +50,53 @@ const states = {
       herz: { text: "reaktiver", className: "marker__value marker__value--warn" },
       belastung: { text: "höher", className: "marker__value marker__value--bad" },
       leistung: { text: "müder", className: "marker__value marker__value--warn" }
+    },
+
+    particles: {
+      count: 12,
+      type: "smoke",
+      minSize: 10,
+      maxSize: 24,
+      minDuration: 6,
+      maxDuration: 10
     }
   }
 };
+
+function randomBetween(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function createParticles(config) {
+  particlesContainer.innerHTML = "";
+
+  for (let i = 0; i < config.count; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+
+    if (config.type === "air") {
+      particle.classList.add("particle--air");
+    }
+
+    if (config.type === "smoke") {
+      particle.classList.add("particle--smoke");
+    }
+
+    const size = randomBetween(config.minSize, config.maxSize);
+    const left = randomBetween(5, 90);
+    const duration = randomBetween(config.minDuration, config.maxDuration);
+    const delay = randomBetween(0, 4);
+
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${left}%`;
+    particle.style.top = `-20px`;
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${delay}s`;
+
+    particlesContainer.appendChild(particle);
+  }
+}
 
 function applyState(stateKey) {
   const state = states[stateKey];
@@ -71,6 +125,8 @@ function applyState(stateKey) {
 
   markerLeistung.textContent = state.marker.leistung.text;
   markerLeistung.className = state.marker.leistung.className;
+
+  createParticles(state.particles);
 }
 
 buttons.forEach((button) => {
@@ -80,3 +136,4 @@ buttons.forEach((button) => {
 });
 
 applyState("luft");
+``
