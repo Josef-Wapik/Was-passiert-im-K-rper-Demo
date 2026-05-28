@@ -1,0 +1,5 @@
+/
+├─ index.html      ← Inhalt & Struktur
+├─ style.css       ← Layout & Farben
+├─ app.js          ← Logik & Zustände
+└─ assets/         ← (optional) Grafiken / Icons
