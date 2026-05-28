@@ -8,118 +8,77 @@
 </head>
 <body>
   <div class="page">
-
     <header class="hero">
-      <div class="hero__badge">Demonstrator · Sekundarstufe I</div>
+      <div class="hero__badge">Canvas-Demonstrator · Sekundarstufe I</div>
       <h1>Was passiert im Körper?</h1>
-      <p class="hero__subtitle">
-        Atmung – saubere Luft vs. Zigarettenrauch
-      </p>
+      <p class="hero__subtitle">Atmung – saubere Luft vs. Zigarettenrauch</p>
       <p class="hero__text">
-        Diese vereinfachte Simulation zeigt, wie sich die Atmung verändert und
-        wie Sauerstoff sichtbar in den Körper transportiert wird.
+        Dieser Demonstrator zeigt vereinfacht, wie eingeatmete Luft und Sauerstofftransport
+        sichtbar werden können.
       </p>
     </header>
 
     <main class="content">
-
-      <section class="card intro-card">
-        <h2>Worum geht es?</h2>
-        <p>
-          Das Modell zeigt vereinfacht, was beim Einatmen passiert. Die Lunge
-          bewegt sich sichtbar. Gleichzeitig wird dargestellt, wie viel
-          Sauerstoff in den Körper gelangt.
-        </p>
-        <p class="note">
-          Hinweis: Dies ist ein didaktisches Modell, kein Medizinprodukt.
-        </p>
-      </section>
-
       <section class="card controls-card">
         <div class="section-header">
           <h2>Vergleich</h2>
-          <p>Wähle einen Zustand aus und beobachte die Atmung.</p>
+          <p>Wähle einen Zustand aus.</p>
         </div>
 
         <div class="toggle-group" id="controls">
-          <button class="toggle-button active" data-state="luft">
-            Saubere Luft
-          </button>
-          <button class="toggle-button" data-state="rauch">
-            Zigarettenrauch
-          </button>
+          <button class="toggle-button active" data-state="luft">Saubere Luft</button>
+          <button class="toggle-button" data-state="rauch">Zigarettenrauch</button>
         </div>
       </section>
 
       <section class="card simulation-card">
         <div class="simulation-card__header">
-          <h2>Vereinfachtes Körpermodell</h2>
+          <h2>Canvas-Simulation</h2>
           <span id="stateTag" class="state-tag state-tag--luft">Saubere Luft</span>
         </div>
 
-        <div class="simulation-layout">
-          <div class="visual-column">
-            <div id="lungVisual" class="lung-visual lung-visual--luft">
-              <div id="lungBody" class="lung-body breathing">
-                <div class="lung-shape">🫁</div>
-              </div>
+        <div class="canvas-wrapper">
+          <canvas id="simCanvas" width="900" height="460"></canvas>
+        </div>
 
-              <div id="airParticles" class="particles particles--air" aria-hidden="true"></div>
-              <div id="smokeParticles" class="particles particles--smoke" aria-hidden="true"></div>
-              <div id="oxygenTransport" class="transport transport--oxygen" aria-hidden="true"></div>
-            </div>
+        <div class="marker-panel">
+          <div class="marker">
+            <div class="marker__label">Atemwege</div>
+            <div id="markerAtemwege" class="marker__value marker__value--good">weit</div>
           </div>
 
-          <div class="marker-panel">
-            <div class="marker">
-              <div class="marker__label">Atemwege</div>
-              <div id="markerAtemwege" class="marker__value marker__value--good">weit</div>
-            </div>
+          <div class="marker">
+            <div class="marker__label">Sauerstoff</div>
+            <div id="markerSauerstoff" class="marker__value marker__value--good">hoch</div>
+          </div>
 
-            <div class="marker">
-              <div class="marker__label">Sauerstoff</div>
-              <div id="markerSauerstoff" class="marker__value marker__value--good">hoch</div>
-            </div>
+          <div class="marker">
+            <div class="marker__label">Transport</div>
+            <div id="markerTransport" class="marker__value marker__value--good">deutlich</div>
+          </div>
 
-            <div class="marker">
-              <div class="marker__label">Transport</div>
-              <div id="markerTransport" class="marker__value marker__value--good">deutlich</div>
-            </div>
+          <div class="marker">
+            <div class="marker__label">Belastung</div>
+            <div id="markerBelastung" class="marker__value marker__value--neutral">gering</div>
+          </div>
 
-            <div class="marker">
-              <div class="marker__label">Belastung</div>
-              <div id="markerBelastung" class="marker__value marker__value--neutral">gering</div>
-            </div>
-
-            <div class="marker">
-              <div class="marker__label">Leistungsfähigkeit</div>
-              <div id="markerLeistung" class="marker__value marker__value--good">fit</div>
-            </div>
+          <div class="marker">
+            <div class="marker__label">Leistungsfähigkeit</div>
+            <div id="markerLeistung" class="marker__value marker__value--good">fit</div>
           </div>
         </div>
 
         <div class="explanation-box">
           <h3>Was passiert gerade?</h3>
           <p id="explanation">
-            Bei sauberer Luft nimmt die Lunge Sauerstoff gut auf. Viele Sauerstoff-Teilchen werden sichtbar in den Körper transportiert.
+            Bei sauberer Luft dehnt sich die Lunge frei aus. Viele Sauerstoff-Teilchen werden sichtbar weitertransportiert.
           </p>
         </div>
       </section>
-
-      <section class="card didactic-card">
-        <h2>Einsatz im Unterricht</h2>
-        <ul class="didactic-list">
-          <li>Sekundarstufe I (Klassen 7–9)</li>
-          <li>Dauer: 45 Minuten</li>
-          <li>Keine Accounts, keine Datenerhebung</li>
-          <li>Im Browser oder auf Tablets nutzbar</li>
-        </ul>
-      </section>
-
     </main>
 
     <footer class="footer">
-      <p>Projekt-Demonstrator · Pilotphase</p>
+      <p>Didaktischer Demonstrator · Pilotphase</p>
     </footer>
   </div>
 
