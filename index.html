@@ -2,58 +2,129 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Was passiert im Körper?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <title>Was passiert im Körper?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
 
-  <header>
-    <h1>Was passiert im Körper?</h1>
-    <p class="subtitle">
-      Didaktischer Demonstrator zur Gesundheits- und Körperkompetenz (Sekundarstufe I)
-    </p>
-  </header>
-
-  <main>
-    <section id="intro">
-      <p>
-        Dieser Demonstrator zeigt vereinfacht, wie der Körper auf unterschiedliche
-        Bedingungen reagiert – zum Beispiel beim Atmen sauberer Luft oder bei Rauch.
+    <header class="hero">
+      <div class="hero__badge">Demonstrator · Sekundarstufe I</div>
+      <h1>Was passiert im Körper?</h1>
+      <p class="hero__subtitle">
+        Ein didaktischer Demonstrator zur Gesundheits- und Körperkompetenz.
       </p>
-      <p class="hint">
-        Hinweis: Dies ist ein didaktisches Modell, kein Medizinprodukt.
+      <p class="hero__text">
+        Diese vereinfachte Simulation zeigt, wie sich der Körper beim Atmen
+        unter unterschiedlichen Bedingungen verändert.
       </p>
-    </section>
+    </header>
 
-    <section id="controls">
-      <button data-state="luft" class="active">Saubere Luft</button>
-      <button data-state="rauch">Zigarettenrauch</button>
-    </section>
+    <main class="content">
 
-    <section id="simulation">
-      <div id="lung-visual">
-        🫁
-      </div>
-      <p id="explanation">
-        Bei sauberer Luft kann der Körper Sauerstoff gut aufnehmen.
-      </p>
-    </section>
+      <section class="card intro-card">
+        <h2>Worum geht es?</h2>
+        <p>
+          Im Unterricht bleiben Körperprozesse oft abstrakt. Dieser Demonstrator
+          macht Ursache-Wirkungs-Zusammenhänge sichtbar – am Beispiel von
+          <strong>sauberer Luft</strong> im Vergleich zu <strong>Zigarettenrauch</strong>.
+        </p>
+        <p class="note">
+          Hinweis: Dies ist ein didaktisches Modell, kein Medizinprodukt.
+        </p>
+      </section>
 
-    <section id="didaktik">
-      <h2>Einsatz im Unterricht</h2>
-      <ul>
-        <li>Sekundarstufe I (Klassen 7–9)</li>
-        <li>Dauer: 45 Minuten</li>
-        <li>Keine Accounts, keine Datenerhebung</li>
-      </ul>
-    </section>
-  </main>
+      <section class="card controls-card">
+        <div class="section-header">
+          <h2>Vergleich</h2>
+          <p>Wähle einen Zustand aus und beobachte die Veränderung.</p>
+        </div>
 
-  <footer>
-    <p>Demonstrator – Stand Pilotphase</p>
-  </footer>
+        <div class="toggle-group" id="controls">
+          <button class="toggle-button active" data-state="luft">
+            Saubere Luft
+          </button>
+          <button class="toggle-button" data-state="rauch">
+            Zigarettenrauch
+          </button>
+        </div>
+      </section>
+
+      <section class="card simulation-card">
+        <div class="simulation-card__header">
+          <h2>Vereinfachtes Körpermodell</h2>
+          <span id="stateTag" class="state-tag state-tag--luft">Saubere Luft</span>
+        </div>
+
+        <div class="simulation-layout">
+          <div id="lungVisual" class="lung-visual lung-visual--luft">
+            <div class="lung-icon">🫁</div>
+            <div class="particles" id="particles" aria-hidden="true"></div>
+          </div>
+
+          <div class="marker-panel">
+            <div class="marker">
+              <div class="marker__label">Atemwege</div>
+              <div id="markerAtemwege" class="marker__value marker__value--good">
+                weit
+              </div>
+            </div>
+
+            <div class="marker">
+              <div class="marker__label">Sauerstoff</div>
+              <div id="markerSauerstoff" class="marker__value marker__value--good">
+                hoch
+              </div>
+            </div>
+
+            <div class="marker">
+              <div class="marker__label">Herz</div>
+              <div id="markerHerz" class="marker__value marker__value--good">
+                ruhig
+              </div>
+            </div>
+
+            <div class="marker">
+              <div class="marker__label">Belastung</div>
+              <div id="markerBelastung" class="marker__value marker__value--neutral">
+                gering
+              </div>
+            </div>
+
+            <div class="marker">
+              <div class="marker__label">Leistungsfähigkeit</div>
+              <div id="markerLeistung" class="marker__value marker__value--good">
+                fit
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="explanation-box">
+          <h3>Was passiert gerade?</h3>
+          <p id="explanation">
+            Bei sauberer Luft kann der Körper Sauerstoff gut aufnehmen. Die Atmung funktioniert effizient.
+          </p>
+        </div>
+      </section>
+
+      <section class="card didactic-card">
+        <h2>Einsatz im Unterricht</h2>
+        <ul class="didactic-list">
+          <li>Sekundarstufe I (Klassen 7–9)</li>
+          <li>Dauer: 45 Minuten</li>
+          <li>Keine Accounts, keine Datenerhebung</li>
+          <li>Einsatz im Browser oder auf Tablets</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Projekt-Demonstrator · Pilotphase</p>
+    </footer>
+  </div>
 
   <script src="app.js"></script>
 </body>
