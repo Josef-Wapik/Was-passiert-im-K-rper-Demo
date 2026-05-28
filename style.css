@@ -231,6 +231,43 @@ body {
   opacity: 0.45;
   filter: blur(2px);
 }
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.75;
+  animation: floatDown linear infinite;
+}
+
+.particle--air {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.particle--smoke {
+  background: rgba(90, 90, 90, 0.3);
+  box-shadow: 0 0 10px rgba(80, 80, 80, 0.18);
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(260px);
+    opacity: 0;
+  }
+}
 
 .lung-visual--luft .particles::before {
   width: 120px;
